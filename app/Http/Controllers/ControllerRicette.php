@@ -64,12 +64,17 @@ public function edit(Request $request, $id ){
 }
 
 
+public function deleteSingle($id){
+       $ricette = \App\Recipe::findOrFail($id);
+       $ricette->delete();
 
+        // redirect
+        
+        return redirect()->route('home');
 
+}
 
-
-    
-    
+        
 }
 
 

@@ -48,7 +48,7 @@ route::post('/ricette',           ['as' => 'ricette.post',  'uses' => 'Controlle
 route::get('/ricette/{id}',       ['as'=>  'ricette.single','uses' => 'ControllerRicette@showSingle']);
 route::get('/ricette/{id}/edita', ['as' => 'ricette.edit',  'uses' => 'ControllerRicette@showEditForm']);
 route::put('/ricette/{id}',       ['as' => 'ricette.put',   'uses' => 'ControllerRicette@edit']); 
-
+route::get('/ricette/{id}/cancella', ['as' => 'ricette.edit',  'uses' => 'ControllerRicette@deleteSingle']);
     //
 });
 
