@@ -27,7 +27,7 @@ public function Store(Request $request ){
     $this->validate($request,[  'titolo'=>'required', 'descrizione'=>'required','ingredieuno'=>'required','ingrediedue'=>'required','ingredietre'=>'required']);
     $date=$request->all();
    \App\Recipe::create($date);
-    return redirect()->route('home');
+    return redirect()->route('tutte.ricette');
 }
 
 
@@ -70,7 +70,7 @@ public function deleteSingle($id){
 
         // redirect
         
-        return redirect()->route('home');
+       return redirect()->route('tutte.ricette');
 
 }
 

@@ -38,7 +38,7 @@ route::get('/home', ['as' => 'home',function()
     
    
     
- route::get('/ricette','ControllerRicette@showlist');
+ route::get('/ricette',['as' => 'tutte.ricette',    'uses' => 'ControllerRicette@showlist']);
 
 route::get('/ricette/nuovo',       ['as' => 'ricette.new',    'uses' => 'ControllerRicette@showNewForm']);
 
@@ -50,6 +50,12 @@ route::get('/ricette/{id}/edita', ['as' => 'ricette.edit',  'uses' => 'Controlle
 route::put('/ricette/{id}',       ['as' => 'ricette.put',   'uses' => 'ControllerRicette@edit']); 
 route::get('/ricette/{id}/cancella', ['as' => 'ricette.edit',  'uses' => 'ControllerRicette@deleteSingle']);
     //
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
+    
 });
+
+
 
 
